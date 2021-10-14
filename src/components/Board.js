@@ -93,7 +93,7 @@ function Board() {
           setGameEnd(false);
           updateBoardValue(true);
         }}
-        style={{ marginTop: "15px" }}
+        style={{ marginTop: "15px", padding: "8px 15px", cursor:"pointer"}}
       >
         Reset
       </button>
