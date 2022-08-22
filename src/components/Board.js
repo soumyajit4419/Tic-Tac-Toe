@@ -52,7 +52,11 @@ function Board() {
   };
 
   return (
-    <div style={{ paddingTop: "150px" }}>
+    <div >
+      <span id="header">
+
+      Tic - Tak - Toe
+      </span>
       <div
         style={{
           display: "flex",
@@ -87,7 +91,7 @@ function Board() {
         <Box value={boardState[8]} onClick={(e) => handelClick(8)} />
       </div>
 
-      <button
+      <button id="btn-reset"
         onClick={(e) => {
           updateBoardState(initalValue);
           setGameEnd(false);
