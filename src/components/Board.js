@@ -3,6 +3,8 @@ import Box from "./Box";
 
 const initalValue = ["", "", "", "", "", "", "", "", ""];
 
+var counter = 0 ;
+
 function Board() {
   const [boardState, updateBoardState] = useState(initalValue);
   const [boardValue, updateBoardValue] = useState(true);
@@ -32,17 +34,19 @@ function Board() {
       }
     }
   }, [boardState]);
-
+  
   const handelClick = (idx) => {
     if (gameEnd) {
       return;
     }
+    counter = counter + 1;
+    console.log(counter);
 
     const newArr = Array.from(boardState);
 
     if (newArr[idx]) {
-      alert("click empty cell");
-      console.log("already clicked");
+      alert("Click on an Empty Cell");
+      counter--;
       return;
     }
 
@@ -96,6 +100,7 @@ function Board() {
           updateBoardState(initalValue);
           setGameEnd(false);
           updateBoardValue(true);
+          counter = 0;
         }}
         style={{ marginTop: "15px", padding: "8px 15px", cursor:"pointer"}}
       >
@@ -103,7 +108,8 @@ function Board() {
       </button>
 
       <div style={{ marginTop: "15px" }}>
-        {gameEnd ? <span>{winner} won the game</span> : <></>}
+        { gameEnd ? (<span>{winner} won the game</span>) : (counter === 9) ? <span>GAME DRAW</span> : (<span>Click on the cells to start</span>)}
+
       </div>
     </div>
   );

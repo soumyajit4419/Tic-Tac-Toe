@@ -55,4 +55,5 @@ button{
 #btn-reset:hover{
   background-color: greenyellow;
   color: black;
+  transition: 0.21s ease-in-out all;
 }
