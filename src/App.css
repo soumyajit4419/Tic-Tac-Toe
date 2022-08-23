@@ -1,3 +1,59 @@
+html{
+
+  background: url(/src/img/background.jpeg) no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-weight: bolder;
+}
+
 .App {
-  text-align: center;
+  text-align: center; 
+}
+
+
+html::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.30);
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  margin-top: 150px;
+  justify-content: center;
+}
+
+.container div{
+  background-color: whitesmoke;
+  border-radius: 15px;
+  padding: 4px 8px;
+
+}
+
+#header{
+  font-size: 18px;
+}
+/* buttons */
+button{
+  background-image: linear-gradient(to bottom right, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+
+#btn-reset{
+  /* background-image: linear-gradient(to bottom right, red, yellow); */
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  border-radius: 12px;
+  padding: 8px 34px;
+  padding-bottom: 12px;
+}
+
+#btn-reset:hover{
+  background-color: greenyellow;
+  color: black;
+  transition: 0.21s ease-in-out all;
 }
